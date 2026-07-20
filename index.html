@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Code Formatter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Prettier Engine -->
+    <script src="https://unpkg.com/prettier@3.0.0/standalone.js"></script>
+    <script src="https://unpkg.com/prettier@3.0.0/plugins/babel.js"></script>
+    <script src="https://unpkg.com/prettier@3.0.0/plugins/html.js"></script>
+    <script src="https://unpkg.com/prettier@3.0.0/plugins/postcss.js"></script>
+    <script src="https://unpkg.com/prettier@3.0.0/plugins/yaml.js"></script>
+    <script src="https://unpkg.com/prettier@3.0.0/plugins/estree.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header><h1>Pro Code Formatter</h1></header>
+        <div class="toolbar">
+            <input type="file" id="fileInput" onchange="loadFile(event)" style="display:none">
+            <button onclick="document.getElementById('fileInput').click()">📂 Load File</button>
+            <select id="formatSelect">
+                <option value="babel">JavaScript/JSON</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="yaml">YAML</option>
+                <option value="markdown">Markdown</option>
+            </select>
+            <button onclick="formatCode()">✨ Format</button>
+            <button onclick="downloadCode()">💾 Download</button>
+            <button onclick="copyToClipboard()">📋 Copy</button>
+        </div>
+        <main>
+            <textarea id="editor" placeholder="Paste your code here, load a file, or drag & drop..."></textarea>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
